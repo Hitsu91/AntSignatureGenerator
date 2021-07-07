@@ -81,21 +81,27 @@ function generateTemplate() {
           color: rgb(70, 127, 58);
         "
       >
-        👤 ${nome.value}
+        <span style="margin-right: 0.5rem">👤</span> ${nome.value}
       </p>
       <p style="padding: 0; margin: 0; font-weight: bolder">
-        💼 ${professione.value}
+        <span style="margin-right: 0.5rem">💼</span> ${professione.value}
       </p>
-      <p style="padding: 0; margin: 0">📧 ${email.value}</p>
+      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">📧</span> ${
+        email.value
+      }</p>
       ${
         showTelefono()
           ? `
-      <p style="padding: 0; margin: 0">📱 ${telefono.value}</p>
+      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">📱</span> ${telefono.value}</p>
       `
           : ''
       }
-      <p style="padding: 0; margin: 0">🏠 ${indirizzo.value}</p>
-      <p style="padding: 0; margin: 0">🌍 ${sito.value}</p>
+      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">🏠</span> ${
+        indirizzo.value
+      }</p>
+      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">🌍</span> ${
+        sito.value
+      }</p>
     </div>
   </div>
   <hr
