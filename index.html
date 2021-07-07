@@ -244,6 +244,10 @@
         }
       };
 
+      const showTelefono = () => {
+        return telefono.value != '';
+      };
+
       function generateTemplate() {
         return `<div class="xam_msg_class">
   <title>Firma Ant</title>
@@ -286,9 +290,15 @@
       >
         👤 ${nome.value}
       </p>
-      <p style="padding: 0; margin: 0; font-weight: bolder">💼 ${professione.value}</p>
+      <p style="padding: 0; margin: 0; font-weight: bolder">💼 ${
+        professione.value
+      }</p>
       <p style="padding: 0; margin: 0">📧 ${email.value}</p>
-      <p style="padding: 0; margin: 0">📱 ${telefono.value}</p>
+      ${
+        showTelefono()
+          ? `<p style="padding: 0; margin: 0">📱 ${telefono.value}</p>`
+          : ''
+      }
       <p style="padding: 0; margin: 0">
         🏠 ${indirizzo.value}
       </p>
