@@ -59,8 +59,8 @@ function generateTemplate() {
       padding: 0 1rem;
     "
   >
-    <div style="padding-right: 1rem; height: 8rem">
-      <img alt="" src="${logo.value}" style="height: 100%" />
+    <div style="margin-right: 1rem; max-height: 8rem; max-width: 10rem;">
+      <img alt="" src="${logo.value}" style="height: auto; max-width: 10rem" />
     </div>
     <div
       style="
