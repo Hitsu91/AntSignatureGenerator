@@ -138,3 +138,9 @@ header > h1 {
     opacity: 0;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .code {
+    display: none;
+  }
+}
