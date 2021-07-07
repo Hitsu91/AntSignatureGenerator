@@ -60,7 +60,9 @@ function generateTemplate() {
     "
   >
     <div style="margin-right: 1rem; max-height: 8rem; max-width: 10rem;">
-      <img alt="" src="${logo.value}" style="height: auto; max-width: 10rem" />
+      <img alt="" src="${
+        logo.value
+      }" style="height: auto; max-width: 10rem; max-height: 8rem" />
     </div>
     <div
       style="
