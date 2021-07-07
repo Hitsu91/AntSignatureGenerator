@@ -46,7 +46,7 @@ const showTelefono = () => {
 };
 
 function generateTemplate() {
-  return `<div class="xam_msg_class">
+  return `<div style="background-color: white;">
   <title>Firma Ant</title>
   <div
     style="
@@ -56,7 +56,6 @@ function generateTemplate() {
       margin-top: 1rem;
       padding: 1rem;
       border-bottom: rgb(70, 127, 58) 2px solid;
-
     "
   >
     <div style="margin-right: 1rem; max-height: 8rem; max-width: 35%;">
@@ -111,7 +110,7 @@ function generateTemplate() {
       </p>
     </div>
   </div>
-  <small style="color: rgba(85, 83, 83, 0.8)">
+  <p style="color: rgba(85, 83, 83, 0.8); padding: 0.5rem;">
     Le informazioni, i dati e le notizie contenute nella presente comunicazione
     e i relativi allegati sono di natura privata e come tali possono essere
     riservate e sono, comunque, destinate esclusivamente ai destinatari indicati
@@ -121,7 +120,7 @@ function generateTemplate() {
     regolamento UE 2016/679. Se avete ricevuto questo messaggio per errore, vi
     preghiamo di distruggerlo e di darcene immediata comunicazione anche
     inviando un messaggio di ritorno all’indirizzo e-mail del mittente.
-  </small>
+  </p>
 </div>`;
 }
 
