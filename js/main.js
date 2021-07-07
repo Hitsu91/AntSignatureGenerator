@@ -48,21 +48,23 @@ const showTelefono = () => {
 function generateTemplate() {
   return `<div class="xam_msg_class">
   <title>Firma Ant</title>
-
   <div
     style="
       display: flex;
       flex-direction: row;
-      height: min-content;
       align-items: center;
       margin-top: 1rem;
-      padding: 0 1rem;
+      padding: 1rem;
+      border-bottom: rgb(70, 127, 58) 2px solid;
+
     "
   >
-    <div style="margin-right: 1rem; max-height: 8rem; max-width: 10rem;">
-      <img alt="" src="https://ant-signature-generator.netlify.app/asset/${
-        logo.value
-      }" style="height: auto; max-width: 10rem; max-height: 8rem" />
+    <div style="margin-right: 1rem; max-height: 8rem; max-width: 35%;">
+      <img 
+        alt="" 
+        src="https://ant-signature-generator.netlify.app/asset/${logo.value}" 
+        style="height: auto; max-height: 8rem; max-width: 100%;" 
+      />
     </div>
     <div
       style="
@@ -81,38 +83,34 @@ function generateTemplate() {
           margin: 0;
           font-weight: bold;
           color: rgb(70, 127, 58);
+          word-break: break-word;
         "
       >
         <span style="margin-right: 0.5rem">👤</span> ${nome.value}
       </p>
-      <p style="padding: 0; margin: 0; font-weight: bolder">
+      <p style="padding: 0; margin: 0; font-weight: bolder; word-break: break-word;">
         <span style="margin-right: 0.5rem">💼</span> ${professione.value}
       </p>
-      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">📧</span> ${
-        email.value
-      }</p>
+      <p style="padding: 0; margin: 0; word-break: break-word;">
+        <span style="margin-right: 0.5rem;">📧</span> ${email.value}
+      </p>
       ${
         showTelefono()
           ? `
-      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">📱</span> ${telefono.value}</p>
+      <p style="padding: 0; margin: 0; word-break: break-word;">
+        <span style="margin-right: 0.5rem">📱</span> ${telefono.value}
+      </p>
       `
           : ''
       }
-      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">🏠</span> ${
-        indirizzo.value
-      }</p>
-      <p style="padding: 0; margin: 0"><span style="margin-right: 0.5rem">🌍</span> ${
-        sito.value
-      }</p>
+      <p style="padding: 0; margin: 0; word-break: break-word;">
+        <span style="margin-right: 0.5rem">🏠</span> ${indirizzo.value}
+      </p>
+      <p style="padding: 0; margin: 0; word-break: break-word;">
+        <span style="margin-right: 0.5rem">🌍</span> ${sito.value}
+      </p>
     </div>
   </div>
-  <hr
-    style="
-      color: rgb(70, 127, 58);
-      background-color: rgb(70, 127, 58);
-      height: 2px;
-    "
-  />
   <small style="color: rgba(85, 83, 83, 0.8)">
     Le informazioni, i dati e le notizie contenute nella presente comunicazione
     e i relativi allegati sono di natura privata e come tali possono essere
