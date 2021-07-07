@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      html,
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .riga {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .form {
+        flex-grow: 1;
+      }
+
+      .code {
+        flex-grow: 2;
+        border: 1px solid black;
+        padding: 1rem;
+        height: 30rem;
+        overflow: auto;
+      }
+
+      .body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      footer {
+        background-color: teal;
+        padding: 1rem;
+        color: white;
+        text-align: end;
+      }
+
+      header {
+        padding: 1rem;
+        font-size: 2rem;
+        background-color: teal;
+        color: white;
+      }
+
+      header > h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      .btn-teal {
+        background-color: teal;
+        color: white;
+      }
+
+      .btn-teal:hover {
+        background-color: rgb(6, 153, 153);
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <header>
+      <h1>Generatore Firma Aziendale</h1>
+    </header>
+    <main class="container mt-2 mb-2">
+      <div class="riga">
+        <form name="dati" class="form">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input
+              type="text"
+              name="nome"
+              class="form-control"
+              placeholder="Nome"
+            />
+          </div>
+          <div class="form-group">
+            <label for="professione">Professione</label>
+            <input
+              type="text"
+              name="professione"
+              class="form-control"
+              placeholder="Professione"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input
+              type="text"
+              name="telefono"
+              class="form-control"
+              placeholder="Telefono"
+            />
+          </div>
+          <div class="form-group">
+            <label for="indirizzo">Indirizzo</label>
+            <select class="form-control" name="indirizzo">
+              <option value="Corso Buenos Aires, 47 20124 Milano MI" selected>
+                Milano
+              </option>
+              <option value="Vicolo Giuseppe Bosia 1, 14100 - Asti">
+                Asti
+              </option>
+              <option value="Via XX Settembre 54, 22066 - Mariano Comense">
+                Mariano Comense
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sito">Sito</label>
+            <select class="form-control" name="sito">
+              <option value="www.antsrl.com" selected>Ant SRL</option>
+              <option value="www.reteartigianatodigitale.it">Gruppo RAD</option>
+              <option value="espm.eu">ESPM</option>
+              <option value="www.dinamica-si.it">Dinamica</option>
+              <option value="www.bes4work.it">BES</option>
+              <option value="www.talentieimprese.it">Talenti e Imprese</option>
+              <option value="www.s-g-i.it">SGI</option>
+              <option value="www.formatieoccupati.it">
+                Formati e Occupati
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="logo">Logo</label>
+            <select class="form-control" name="logo">
+              <option
+                value="https://www.antsrl.com/wp/wp-content/uploads/2019/03/ANT.png"
+                selected
+              >
+                Ant SRL
+              </option>
+              <option
+                value="https://www.reteartigianatodigitale.it/wp-content/uploads/2021/01/RAD_Con-scritte.png"
+              >
+                Gruppo RAD
+              </option>
+              <option
+                value="http://espm.eu/wp-content/uploads/2020/07/Espm.png"
+              >
+                ESPM
+              </option>
+              <option
+                value="https://www.dinamica-si.it/wp-content/uploads/2020/11/Dinamica.png"
+              >
+                Dinamica
+              </option>
+              <option
+                value="http://www.bes4work.it/wp-content/uploads/2019/09/BES_RAD_00.png"
+              >
+                BES
+              </option>
+              <option
+                value="https://www.talentieimprese.it/wp-content/uploads/2020/05/cropped-Logo_talentieimprese-copia.png"
+              >
+                Talenti e Imprese
+              </option>
+              <option
+                value="http://www.reteartigianatodigitale.it/wp-content/uploads/2021/07/SGI.png"
+              >
+                SGI
+              </option>
+              <option
+                value="http://formatieoccupati.it/wp-content/uploads/2020/08/FO_RAD-300x91.png"
+              >
+                Formati e Occupati
+              </option>
+            </select>
+          </div>
+          <div class="mt-2 mb-2">
+            <button class="btn btn-teal" id="copia">Copia</button>
+          </div>
+        </form>
+
+        <div class="code">
+          <code>
+            <pre id="code"></pre>
+          </code>
+        </div>
+      </div>
+      <h2>Anteprima</h2>
+      <hr />
+      <div id="preview"></div>
+    </main>
+    <footer>Made with ❤️ by @Hitsu91</footer>
+    <script>
+      const myForm = document.forms.dati;
+      const { nome, professione, telefono, email, indirizzo, sito, logo } =
+        myForm;
+
+      const copia = document.querySelector('#copia');
+      const code = document.querySelector('#code');
+      const preview = document.querySelector('#preview');
+
+      const renderPreview = () => {
+        const generatedTemplate = generateTemplate();
+        code.textContent = generatedTemplate;
+        preview.innerHTML = generatedTemplate;
+      };
+
+      myForm.onsubmit = (event) => {
+        event.preventDefault();
+      };
+
+      myForm.onpaste = renderPreview;
+
+      myForm.onkeyup = renderPreview;
+
+      myForm.onchange = renderPreview;
+
+      copia.onclick = async () => {
+        try {
+          await navigator.clipboard.writeText(generateTemplate());
+          console.log('Async: Copying to clipboard was successful!');
+        } catch (error) {
+          console.error('Async: Could not copy text: ', err);
+        }
+      };
+
+      function generateTemplate() {
+        return `<div class="xam_msg_class">
+  <title>Firma Ant</title>
+
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      height: min-content;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0 1rem;
+    "
+  >
+    <div style="padding-right: 1rem; height: 8rem">
+      <img
+        alt=""
+        src="${logo.value}"
+        style="height: 100%"
+      />
+    </div>
+    <div
+      style="
+        border-left: rgb(70, 127, 58) 2px solid;
+        padding-left: 1rem;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex-grow: 1;
+      "
+    >
+      <p
+        style="
+          padding: 0;
+          margin: 0;
+          font-weight: bold;
+          color: rgb(70, 127, 58);
+        "
+      >
+        👤 ${nome.value}
+      </p>
+      <p style="padding: 0; margin: 0; font-weight: bolder">💼 ${professione.value}</p>
+      <p style="padding: 0; margin: 0">📧 ${email.value}</p>
+      <p style="padding: 0; margin: 0">📱 ${telefono.value}</p>
+      <p style="padding: 0; margin: 0">
+        🏠 ${indirizzo.value}
+      </p>
+      <p style="padding: 0; margin: 0">🌍 ${sito.value}</p>
+    </div>
+  </div>
+  <hr
+    style="
+      color: rgb(70, 127, 58);
+      background-color: rgb(70, 127, 58);
+      height: 2px;
+    "
+  />
+  <small style="color: rgba(85, 83, 83, 0.8)">
+    Le informazioni, i dati e le notizie contenute nella presente comunicazione
+    e i relativi allegati sono di natura privata e come tali possono essere
+    riservate e sono, comunque, destinate esclusivamente ai destinatari indicati
+    in epigrafe. La diffusione, distribuzione e/o la copiatura del documento
+    trasmesso da parte di qualsiasi soggetto diverso dal destinatario è
+    proibita, ai sensi dell’art. 616 c.p., ai sensi del D.Lgs. n. 196/2003 e del
+    regolamento UE 2016/679. Se avete ricevuto questo messaggio per errore, vi
+    preghiamo di distruggerlo e di darcene immediata comunicazione anche
+    inviando un messaggio di ritorno all’indirizzo e-mail del mittente.
+  </small>
+</div>`;
+      }
+
+      renderPreview();
+    </script>
+    <script></script>
+  </body>
+</html>
