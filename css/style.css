@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+main {
+  padding: 0 1rem;
+}
+
 .riga {
   display: flex;
   gap: 1rem;
