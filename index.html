@@ -11,6 +11,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       html,
       body {
@@ -74,12 +80,78 @@
         background-color: rgb(6, 153, 153);
         color: white;
       }
+
+      #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @-webkit-keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body class="body">
     <header>
       <h1>Generatore Firma Aziendale</h1>
     </header>
+    <div id="snackbar">Copiato</div>
     <main class="container mt-2 mb-2">
       <div class="riga">
         <form name="dati" class="form">
@@ -218,6 +290,7 @@
       const copia = document.querySelector('#copia');
       const code = document.querySelector('#code');
       const preview = document.querySelector('#preview');
+      const snackbar = document.querySelector('#snackbar');
 
       const renderPreview = () => {
         const generatedTemplate = generateTemplate();
@@ -238,10 +311,20 @@
       copia.onclick = async () => {
         try {
           await navigator.clipboard.writeText(generateTemplate());
-          console.log('Async: Copying to clipboard was successful!');
+          showSnackbar();
         } catch (error) {
-          console.error('Async: Could not copy text: ', err);
+          console.log(error);
+          showSnackbar('Ops, non è stato possibile copiare. Prova manualmente');
         }
+      };
+
+      const showSnackbar = (message = 'Copiato') => {
+        snackbar.textContent = message;
+        snackbar.className = 'show';
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function () {
+          snackbar.className = snackbar.className.replace('show', '');
+        }, 3000);
       };
 
       const showTelefono = () => {
