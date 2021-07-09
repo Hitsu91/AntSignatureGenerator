@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signature Generator</title>
     <link
@@ -26,7 +25,7 @@
     </header>
     <div id="snackbar">Copiato</div>
     <main class="mt-2 mb-2">
-      <div class="riga">
+      <div class="main-content">
         <form name="dati" class="form">
           <div class="form-group">
             <label for="name">Nome</label>
@@ -55,56 +54,72 @@
               placeholder="Email"
             />
           </div>
-          <div class="form-group">
-            <label for="telefono">Telefono</label>
-            <input
-              type="text"
-              name="telefono"
-              class="form-control"
-              placeholder="Telefono (Opzionale)"
-            />
+          <div class="row">
+            <div class="form-group col">
+              <label for="telefono">Telefono</label>
+              <input
+                type="text"
+                name="telefono"
+                class="form-control"
+                placeholder="Telefono (Opzionale)"
+              />
+            </div>
+            <div class="form-group col">
+              <label for="indirizzo">Indirizzo</label>
+              <select class="form-control" name="indirizzo">
+                <option value="Corso Buenos Aires, 47 20124 Milano MI" selected>
+                  Milano
+                </option>
+                <option value="Vicolo Giuseppe Bosia 1, 14100 - Asti">
+                  Asti
+                </option>
+                <option value="Via XX Settembre 54, 22066 - Mariano Comense">
+                  Mariano Comense
+                </option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="indirizzo">Indirizzo</label>
-            <select class="form-control" name="indirizzo">
-              <option value="Corso Buenos Aires, 47 20124 Milano MI" selected>
-                Milano
-              </option>
-              <option value="Vicolo Giuseppe Bosia 1, 14100 - Asti">
-                Asti
-              </option>
-              <option value="Via XX Settembre 54, 22066 - Mariano Comense">
-                Mariano Comense
-              </option>
-            </select>
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="sito">Sito</label>
+              <select class="form-control" name="sito">
+                <option value="www.antsrl.com" selected>Ant SRL</option>
+                <option value="www.reteartigianatodigitale.it">
+                  Gruppo RAD
+                </option>
+                <option value="espm.eu">ESPM</option>
+                <option value="www.dinamica-si.it">Dinamica</option>
+                <option value="www.bes4work.it">BES</option>
+                <option value="www.talentieimprese.it">
+                  Talenti e Imprese
+                </option>
+                <option value="www.s-g-i.it">SGI</option>
+                <option value="www.formatieoccupati.it">
+                  Formati e Occupati
+                </option>
+              </select>
+            </div>
+            <div class="form-group col">
+              <label for="logo">Logo</label>
+              <select class="form-control" name="logo">
+                <option value="ant.png" selected>Ant SRL</option>
+                <option value="rad.png">Gruppo RAD</option>
+                <option value="espm.png">ESPM</option>
+                <option value="dinamica.png">Dinamica</option>
+                <option value="bes.png">BES</option>
+                <option value="talenti_e_imprese.png">Talenti e Imprese</option>
+                <option value="sgi.png">SGI</option>
+                <option value="formati_e_occupati.png">
+                  Formati e Occupati
+                </option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="sito">Sito</label>
-            <select class="form-control" name="sito">
-              <option value="www.antsrl.com" selected>Ant SRL</option>
-              <option value="www.reteartigianatodigitale.it">Gruppo RAD</option>
-              <option value="espm.eu">ESPM</option>
-              <option value="www.dinamica-si.it">Dinamica</option>
-              <option value="www.bes4work.it">BES</option>
-              <option value="www.talentieimprese.it">Talenti e Imprese</option>
-              <option value="www.s-g-i.it">SGI</option>
-              <option value="www.formatieoccupati.it">
-                Formati e Occupati
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="logo">Logo</label>
-            <select class="form-control" name="logo">
-              <option value="ant.png" selected>Ant SRL</option>
-              <option value="rad.png">Gruppo RAD</option>
-              <option value="espm.png">ESPM</option>
-              <option value="dinamica.png">Dinamica</option>
-              <option value="bes.png">BES</option>
-              <option value="talenti_e_imprese.png">Talenti e Imprese</option>
-              <option value="sgi.png">SGI</option>
-              <option value="formati_e_occupati.png">Formati e Occupati</option>
-            </select>
+
+          <div class="form-check">
+            <input class="form-check-input teal" type="checkbox" name="save" />
+            <label class="form-check-label" for="save"> Salva </label>
           </div>
           <div class="mt-2 mb-2">
             <button class="btn btn-teal" id="copia">Copia</button>

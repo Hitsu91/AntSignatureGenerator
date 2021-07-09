@@ -9,23 +9,23 @@ main {
   padding: 0 1rem;
 }
 
-.riga {
+.main-content {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 1rem;
 }
 
 .form {
-  flex-grow: 2;
+  flex-grow: 3;
 }
 
 .code {
-  flex-grow: 3;
+  flex-grow: 5;
   border: 1px solid black;
   padding: 1rem;
-  height: 30rem;
+  height: 20rem;
   overflow: auto;
   position: relative;
 }
@@ -66,6 +66,10 @@ header {
 header > h1 {
   font-size: 1.5rem;
   margin: 0;
+}
+
+.teal {
+  background-color: teal !important;
 }
 
 .btn-teal {
