@@ -68,7 +68,7 @@ header > h1 {
   margin: 0;
 }
 
-.teal {
+input[TYPE='checkbox'].teal:checked {
   background-color: teal !important;
 }
 
